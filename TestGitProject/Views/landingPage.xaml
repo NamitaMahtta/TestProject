@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestGitProject.Classes"
+             x:Class="TestGitProject.Views.landingPage" NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+            <StackLayout BackgroundColor="White"> 
+                <StackLayout.Padding>
+                    <OnPlatform x:TypeArguments="Thickness">
+                      <On Platform="iOS" Value="10,30,10,0" />
+                      <On Platform="Android, UWP" Value="10,0,10,0" />
+                    </OnPlatform>
+                </StackLayout.Padding>
+
+                <Image Source="logo" WidthRequest="{OnPlatform iOS=300, Android=250}" HeightRequest="{OnPlatform iOS=100, Android=100}" HorizontalOptions="Center" />
+                <!--<Image HorizontalOptions="FillAndExpand">                    
+                    <Image.Source>
+                        <OnPlatform x:TypeArguments="ImageSource">  
+                            <On Platform="iOS" Value="{local:ImageResource TestGitProject.iOS.logo.png}"/>
+                            <On Platform="Android" Value="{local:ImageResource TestGitProject.Droid.Images.logo.png}"/>
+                        </OnPlatform>
+                    </Image.Source>
+                    <Image.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double"> 
+                            <On Platform="Android, Windows">100</On>
+                            <On Platform="iOS">100</On>
+                        </OnPlatform>
+                    </Image.HeightRequest>
+                </Image> -->
+
+                <OnPlatform x:TypeArguments="View">
+                    <OnPlatform.Android>
+                        <BoxView  BackgroundColor="Transparent" HeightRequest="-20" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                    </OnPlatform.Android>
+                    <OnPlatform.iOS>
+                        <BoxView  BackgroundColor="Transparent" HeightRequest="0" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                    </OnPlatform.iOS>
+                </OnPlatform> 
+            
+                <Frame VerticalOptions="CenterAndExpand" Padding="10, 10, 10, 0">
+                    <StackLayout VerticalOptions="StartAndExpand" Padding="5,5,5,5">
+                        <Label Text="Login" Font="Bold,25"/>
+                        <BoxView  BackgroundColor="Transparent" HeightRequest="1" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />
+                        <Entry x:Name="usernameEntry" Placeholder="username" />
+                        <OnPlatform x:TypeArguments="View">
+                            <OnPlatform.Android>
+                                <BoxView  BackgroundColor="Transparent" HeightRequest="-25" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </OnPlatform.Android>
+                            <OnPlatform.iOS>
+                                <BoxView  BackgroundColor="Transparent" HeightRequest="-20" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </OnPlatform.iOS>
+                        </OnPlatform> 
+                        <Entry x:Name="passwordEntry" IsPassword="true" Placeholder="Password"/>
+                        <OnPlatform x:TypeArguments="View">
+                            <OnPlatform.Android>
+                                <BoxView  BackgroundColor="Transparent" HeightRequest="-20" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </OnPlatform.Android>
+                            <OnPlatform.iOS>
+                                <BoxView  BackgroundColor="Transparent" HeightRequest="-15" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </OnPlatform.iOS>
+                        </OnPlatform>
+                        <Button Text="Login"  x:Name="signInButton" Style="{StaticResource ButtonStyle}"
+                                    Clicked="OnLoginButtonClicked"/>
+                        <Label x:Name="messageLabel"/>
+                        
+                        <OnPlatform x:TypeArguments="View">
+                            <OnPlatform.Android>
+                                <BoxView  BackgroundColor="Transparent" HeightRequest="-35" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </OnPlatform.Android>
+                            <OnPlatform.iOS>
+                                <BoxView  BackgroundColor="Transparent" HeightRequest="-10" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </OnPlatform.iOS>
+                        </OnPlatform>  
+                        
+                        <Button Text="Signup"  x:Name="signUpButton" Style="{StaticResource ButtonStyle}"
+                                    Clicked="OnSignUpButtonClicked"/>
+                        
+                        <OnPlatform x:TypeArguments="View">
+                            <OnPlatform.Android>
+                                <!--<Frame WidthRequest="300">-->
+                                <StackLayout Orientation="Vertical"  VerticalOptions="CenterAndExpand" Spacing="-5" HorizontalOptions="CenterAndExpand">                                   
+                                    <Button Text="Forget Username?" Clicked="OnForgotUsernameButtonClicked" TextColor="#2F7B76" />
+                                    <Button Text="Forget Password?" Clicked="OnForgotPwdButtonClicked" TextColor="#2F7B76" />                                                                       <BoxView  BackgroundColor="Transparent" HeightRequest="-35" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                                    <BoxView  BackgroundColor="Transparent" HeightRequest="-15" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />    
+                            </StackLayout>
+<!--                             </Frame>-->
+                            </OnPlatform.Android>
+                            <OnPlatform.iOS>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Spacing="-10">
+                                    <Button Text="Forget Your Username?" Clicked="OnForgotUsernameButtonClicked" TextColor="#03254c" />
+                                    <Button Text="Forget Your Password?" Clicked="OnForgotPwdButtonClicked" TextColor="#03254c"/>
+                                    <BoxView  BackgroundColor="Transparent" HeightRequest="-5" VerticalOptions="Start" HorizontalOptions="FillAndExpand" />        
+                                </StackLayout>
+                            </OnPlatform.iOS>
+                        </OnPlatform>        
+                                                                     
+                        <ActivityIndicator x:Name="pageActivityIndicator"></ActivityIndicator>
+                    </StackLayout>
+                </Frame>
+                
+                <StackLayout Orientation="Horizontal"  VerticalOptions="EndAndExpand" BackgroundColor="#FFFAFB" Margin="0, 0, 0, 0">                                   
+                            <Button Text="Terms &amp; Conditions" Clicked="OnTermConditionClicked" TextColor="#03254c" HorizontalOptions="StartAndExpand" VerticalOptions="EndAndExpand" BorderColor="#2F7B76" BackgroundColor="#FFFAFB"/>        
+                            <Button Text="Contact Us" Clicked="OnContactUsButtonClicked" TextColor="#03254c" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"  BorderColor="#2F7B76"  BackgroundColor="#FFFAFB"/>                                   
+                </StackLayout>
+            </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

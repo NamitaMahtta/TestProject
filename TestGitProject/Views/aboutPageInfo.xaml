@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestGitProject.Views.aboutPageInfo">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Here is a link to know more about Stuff" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+            <Image Source="logo" WidthRequest="{OnPlatform iOS=300, Android=250}" HeightRequest="{OnPlatform iOS=100, Android=100}" HorizontalOptions="Center" />            
+         
+            <Button Text="Information Home Portal" Clicked="links" VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

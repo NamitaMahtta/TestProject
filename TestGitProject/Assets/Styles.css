@@ -1,0 +1,193 @@
+﻿ContentPage {
+    background-color: #FFFFFF;
+    padding: 1;
+}
+
+Frame {
+    background-color: #FFFFFF;
+}
+
+StackLayout {
+    background-color: #FFFFFF;
+}
+
+.checkboxStyle {
+    color: #49C1B9;
+    width: 18;
+    height: 18;
+    border-radius: 2px;
+}
+
+Entry {
+    background-color: #F6F7F7;
+    color: #2F7B76;
+    border-radius: 3px;
+    padding: 14px 16px;
+    font-size: 16;
+    font-family: Helvetica;
+    width: 335;
+    height: 46;
+    margin-bottom: 20;
+    text-align: center;
+}
+
+Editor {
+    background-color: #F6F7F7;
+    color: #2F7B76;
+    border-radius: 3px;
+    padding: 14px 16px;
+    font-size: 16;
+    font-family: Helvetica;
+    width: 335;
+    /*height: 50;*/
+    margin-bottom: 20;
+    text-align: left;
+}
+
+Picker {
+    background-color: #F6F7F7;
+    color: #2F7B76;
+    border-radius: 3px;
+    padding: 14px 16px;
+    font-size: 16;
+    font-family: Helvetica;
+    width: 335;
+    height: 46;
+    margin-bottom: 20;
+    text-align: center;
+}
+
+Label {
+    font-size: 20;
+    font-family: Helvetica;
+    font-style: bold;
+    text-align: left;
+}
+
+.textStyle {
+    font-size: 22;
+    font-family: Helvetica;
+    font-style: bold;
+    text-align: center;
+}
+
+.labelStyleVital {
+    font-size: 20;
+    font-family: Helvetica;
+    font-style: bold;
+    text-align: left;
+}
+
+    .labelStyleVital + entry {
+        background-color: #F6F7F7;
+        color: #2F7B76;
+        border-radius: 3px;
+        padding: 5px 5px;
+        font-size: 25;
+        font-family: Helvetica;
+        width: 200;
+        height: 45;
+        margin-bottom: 20;
+        text-align: center;
+    }
+
+    .labelStyleVital + slider + entry {
+        background-color: #F6F7F7;
+        color: #2F7B76;
+        border-radius: 3px;
+        padding: 5px 5px;
+        font-size: 25;
+        font-family: Helvetica;
+        width: 200;
+        height: 45;
+        margin-bottom: 20;
+        text-align: center;
+    }
+
+    .labelStyleVital + picker {
+        background-color: #F6F7F7;
+        color: #2F7B76;
+        border-radius: 3px;
+        padding: 5px 5px;
+        font-size: 25;
+        font-family: Helvetica;
+        width: 200;
+        height: 45;
+        margin-bottom: 20;
+        text-align: center;
+    }
+
+.labelStyleProfile {
+    font-size: 20;
+    font-family: Helvetica;
+    font-style: bold;
+    text-align: left;
+    width: 120;
+    height: 50;
+}
+
+    .labelStyleProfile + entry {
+        background-color: #F6F7F7;
+        color: #2F7B76;
+        border-radius: 3px;
+        padding: 5px 5px;
+        font-size: 16;
+        font-family: Helvetica;
+        width: 200;
+        height: 50;
+        margin-bottom: 20;
+        text-align: center;
+    }
+    
+    .labelStyleProfile + picker {
+        background-color: #F6F7F7;
+        color: #2F7B76;
+        border-radius: 3px;
+        padding: 5px 5px;
+        font-size: 16;
+        font-family: Helvetica;
+        width: 200;
+        height: 50;
+        margin-bottom: 20;
+        text-align: center;
+    }
+
+    .labelStyleProfile + picker + entry {
+        background-color: #F6F7F7;
+        color: #2F7B76;
+        border-radius: 3px;
+        padding: 5px 5px;
+        font-size: 16;
+        font-family: Helvetica;
+        width: 200;
+        height: 50;
+        margin-bottom: 20;
+        text-align: center;
+    }
+
+.entryStyleVital {
+    background-color: #F6F7F7;
+    color: #2F7B76;
+    border-radius: 3px;
+    padding: 5px 5px;
+    font-size: 16;
+    font-family: Helvetica;
+    width: 200;
+    height: 50;
+    margin-bottom: 20;
+    text-align: center;
+}
+
+.entryStyleProfile {
+    background-color: #F6F7F7;
+    color: #2F7B76;
+    border-radius: 3px;
+    padding: 5px 5px;
+    font-size: 16;
+    font-family: Helvetica;
+    width: 200;
+    height: 50;
+    margin-bottom: 20;
+    text-align: center;
+}
+

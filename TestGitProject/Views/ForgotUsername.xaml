@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestGitProject.Views.ForgotUsername">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="StackStyle" TargetType="StackLayout">
+                <Setter Property="Orientation" Value="Horizontal"/>
+            </Style>
+            
+            <Color x:Key="ColorValue">Red</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+         <ScrollView x:Name="scrollView">
+            <Frame Padding="3,1, 3, 1">
+                <StackLayout x:Name="StackLayoutTop" Orientation="Vertical" Padding="16,20,16,20" 
+                    Spacing="10"  >
+                    <Label  Text="Forgot Your Username" Font="25" FontAttributes="Bold"/>
+                    <BoxView HeightRequest="3" Color="#2F7B76"></BoxView>
+                   
+                    <BoxView HeightRequest="10"></BoxView>
+                    <StackLayout Style="{StaticResource StackStyle}">
+                        <Label  Text="Email" StyleClass="labelStyleVital"/>
+                        <Entry x:Name="emailEntry"  />
+                    </StackLayout>
+                    
+                    <Button x:Name="btnRequestUsername" Text = "Request Username"
+                            Clicked="RequestUsername"  Style="{StaticResource ButtonStyle}">
+                    </Button>
+                    
+                </StackLayout></Frame></ScrollView>
+    </ContentPage.Content>
+</ContentPage>

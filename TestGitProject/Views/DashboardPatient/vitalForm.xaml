@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="TestGitProject.Views.DashboardPatient.vitalForm"
+             xmlns:local="clr-namespace:TestGitProject.Classes" 
+                xmlns:Range="clr-namespace:Syncfusion.SfRangeSlider.XForms;assembly=Syncfusion.SfRangeSlider.XForms"
+                Title="Vitals Form">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="HorizontalOptions" Value="Center"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+        <ScrollView x:Name="scrollViewVital">
+                <Frame BackgroundColor="#FFFAFB" Padding="1,1,1,1">   
+                    <StackLayout x:Name="StackLayoutTop" Orientation="Vertical" Padding="16,20,16,20"  AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" 
+                        Spacing="5" Style="{StaticResource StackStyle} ">
+                        
+                        <StackLayout x:Name="layout1" IsVisible="true">
+                        <StackLayout>
+                            <Label x:Name="topText" Text="Questions:" 
+                                    HorizontalOptions="StartAndExpand" FontSize="25" FontAttributes="Italic"/>
+                        </StackLayout>
+                        <BoxView HeightRequest="15"></BoxView>
+                        
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                            <Label  Text="1) Question Text 1" StyleClass="labelStyleVital"/>                                 
+                        </StackLayout>
+                        <Entry x:Name="Question1" Text="" Keyboard="Numeric" />
+                        <BoxView HeightRequest="5"></BoxView>
+                        
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                            <Label Text="2) Question Text 2" StyleClass="labelStyleVital" />                                 
+                        </StackLayout>
+                        <Entry x:Name="Question2" Text="" Keyboard="Numeric"/>
+                        <BoxView HeightRequest="5"></BoxView>
+
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                            <Label  Text="3) Question Text 3" StyleClass="labelStyleVital" />                                
+                        </StackLayout>
+                        <Entry x:Name="Question3" Text="" Keyboard="Numeric"/>
+                        <BoxView HeightRequest="5"></BoxView>
+                                               
+                        <StackLayout Spacing="-20">
+                            <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                                <Label  Text="4) Question Text 4" StyleClass="labelStyleVital" />                              
+                            </StackLayout> 
+                            <OnPlatform x:TypeArguments="View">
+                                    <OnPlatform.iOS>
+                                        <Range:SfRangeSlider x:Name="Slider"  Maximum="100" Minimum="60" Orientation="Horizontal" RangeStart = "0" RangeEnd = "101"
+                                                             StepFrequency="0.1" ToolTipPrecision="1" 
+                                                             TrackThickness="10" TrackColor="#F6F7F7" TrackSelectionColor="#2F7B76"
+                                                             KnobColor="#49C1B9" FontFamily="Times New Roman" FontAttribute="Italic" FontSize="20"
+                                                             LabelColor="#2F7B76" ShowRange="false">
+                                        </Range:SfRangeSlider>
+                                    </OnPlatform.iOS>
+                                    <OnPlatform.Android>
+                                        <Slider x:Name="SliderAndroid" 
+                                            HorizontalOptions="FillAndExpand" 
+                                            Maximum='100' Minimum='60'   
+                                            Margin="20,0,22,0" HeightRequest="30" BackgroundColor="#D1D6D8" ThumbColor="#485D64"/>
+                                    </OnPlatform.Android>
+                                </OnPlatform>
+                                <Entry x:Name="RelatedValueText4" Text= "" Keyboard="Numeric"/>
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                            <Label  Text="Question Text?" FontAttributes="Italic"/>                                 
+                        </StackLayout>
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="20">
+                                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5" HorizontalOptions="StartAndExpand">
+                                                <Label  Text="Yes" FontAttributes="Italic"/>
+                                                <Switch x:Name="Yes" Toggled="text4Toggled" ClassId="yesO"></Switch>     
+                                        </StackLayout>
+                                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5" HorizontalOptions="EndAndExpand">
+                                                <Label  Text="No" FontAttributes="Italic"/>
+                                                <Switch x:Name="No" Toggled="text4Toggled" ClassId="noO"></Switch>
+                                       </StackLayout>
+                        </StackLayout>
+                        <BoxView HeightRequest="5"></BoxView>
+                    
+<!--                        <StackLayout Spacing="-20"> -->
+                            <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                                        <Label  Text="5) Question 5" StyleClass="labelStyleVital"/>
+                            </StackLayout>
+                            <OnPlatform x:TypeArguments="View">
+                                    <OnPlatform.iOS> 
+                                        <Range:SfRangeSlider x:Name="PSlider" Minimum="0" Maximum="10" StepFrequency="1" Orientation="Horizontal" 
+                                                             TrackThickness="10" TickFrequency="1" RangeStart = "-1" RangeEnd = "11"
+                                                             TrackColor="#F6F7F7" TickColor="#04212B" KnobColor="#49C1B9" TrackSelectionColor="#2F7B76"
+                                                             FontFamily="Times New Roman" FontAttribute="Italic" FontSize="20" TickPlacement="Inline"
+                                                             LabelColor="#2F7B76" ShowCustomLabel="true" LabelPlacement="TopLeft" 
+                                                             ValueChanging="OnPSliderValueChanged" ShowRange="false">
+                                            <Range:SfRangeSlider.CustomLabels>
+                                                <local:ObservableCollectionList>
+                                                    <Range:Items Label="No" Value="0"/>
+                                                    <Range:Items Label="Moderate" Value="5"/>
+                                                    <Range:Items Label="Worst" Value="10"/>
+                                                </local:ObservableCollectionList>
+                                            </Range:SfRangeSlider.CustomLabels>
+                                        </Range:SfRangeSlider>
+                                    </OnPlatform.iOS>
+                                    <OnPlatform.Android> 
+                                        <Slider x:Name="PSliderAndroid" 
+                                            HorizontalOptions="FillAndExpand" 
+                                            Minimum='0' Maximum='10'  
+                                            ValueChanged="OnPSliderValueChangedAndroid" Margin="20,0,22,0" HeightRequest="30" BackgroundColor="#D1D6D8" ThumbColor="#485D64"/>
+                                    </OnPlatform.Android>
+                                </OnPlatform> 
+                                <BoxView HeightRequest="-20"></BoxView>
+                                <Entry x:Name="RelatedValueText5" Text="" Keyboard="Numeric" ></Entry>
+<!--                        </StackLayout>-->                                          
+                        <BoxView HeightRequest="5"></BoxView>
+
+                        <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                            <Label  Text="6) Question 6" StyleClass="labelStyleVital"/>                                 
+                        </StackLayout>
+                        <BoxView HeightRequest="3"></BoxView>
+                        <Grid x:Name="grid3" Margin="1, 5, 1, 10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Frame x:Name="frame3_1" Grid.Row="0" Grid.Column="0" Style="{StaticResource FrameVitalStyle} ">
+                                <Image x:Name="label3_1" ClassId="3" Source="option1" HorizontalOptions="Center" />             
+                            </Frame>
+                            <Frame x:Name="frame3_2" Grid.Row="0" Grid.Column="1" Style="{StaticResource FrameVitalStyle} ">
+                                <Image x:Name="label3_2" ClassId="3" Source="option2" HorizontalOptions="Center" />                                 
+                            </Frame>
+
+                            <Frame x:Name="frame3_3" Grid.Row="1" Grid.Column="0" Style="{StaticResource FrameVitalStyle} ">
+                                <Image x:Name="label3_3" ClassId="3" Source="option2" HorizontalOptions="Center" />  
+                            </Frame>
+
+                            <Frame x:Name="frame3_4" Grid.Row="1" Grid.Column="1" Style="{StaticResource FrameVitalStyle} ">
+                                <Image x:Name="label3_4" ClassId="3" Source="option1" HorizontalOptions="Center" />     
+                            </Frame>
+                        </Grid>
+
+                        <Button x:Name="btnNext" Text = "Next" Style="{StaticResource ButtonStyle} " 
+                                Clicked="GoToNextPage"></Button>
+                        </StackLayout>
+                        
+                        <StackLayout x:Name="layout2" IsVisible="false">
+                            <BoxView HeightRequest="30"></BoxView>
+
+                            <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="5">   
+                            <Label  Text="7) Question 7" StyleClass="labelStyleVital"/>                                 
+                        </StackLayout>
+                        <BoxView HeightRequest="3"></BoxView>
+                        <Grid x:Name="grid4" Margin="1, 5, 1, 10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Frame x:Name="frame4_1" Grid.Row="0" Grid.Column="0" Style="{StaticResource FrameVitalStyle} ">
+                                <Label x:Name="label4_1" ClassId="4" Text="Option 1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+                            </Frame>
+                            <Frame x:Name="frame4_2" Grid.Row="0" Grid.Column="1" Style="{StaticResource FrameVitalStyle} ">
+                                <Image x:Name="label4_2" ClassId="4" Source="option2" HorizontalOptions="Center" />                                 
+                            </Frame>
+
+                            <Frame x:Name="frame4_3" Grid.Row="1" Grid.Column="0" Style="{StaticResource FrameVitalStyle} ">
+                                <Label x:Name="label4_3" ClassId="4" Text="Option 3" HorizontalOptions="Center" VerticalOptions="Center"></Label> 
+                            </Frame>
+
+                            <Frame x:Name="frame4_4" Grid.Row="1" Grid.Column="1" Style="{StaticResource FrameVitalStyle} ">
+                                <Image x:Name="label4_4" ClassId="4" Source="option1" HorizontalOptions="Center" />     
+                            </Frame>
+                        </Grid>
+                            
+                            <BoxView HeightRequest="5"></BoxView>
+                            <Label  Text="8) Comments (if any)" StyleClass="labelStyleVital"/>
+                            <Editor x:Name="comments" Placeholder="Enter any comments here.." AutoSize="TextChanges"/>
+                         
+                            <BoxView HeightRequest="10"></BoxView>
+
+                            <Button x:Name="btnBack" Text = "Back" ClassId = "2"                                                                       
+                                            Clicked="OnClickedBackBtn" Style="{StaticResource ButtonStyle}" HorizontalOptions="Center"/>
+                        
+                            <Button x:Name="btnSubmit" Text = "Submit" ClassId = "2"                                                                       
+                                            Clicked="OnClickedVitalSubmit" Style="{StaticResource ButtonStyle}" HorizontalOptions="Center"/>                        
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </ScrollView>              
+</ContentPage>

@@ -1,0 +1,64 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+    <PackageReference Include="Syncfusion.Xamarin.SfChart" Version="18.3.0.51" />
+    <PackageReference Include="XLabs.Forms" Version="2.0.5782" />
+    <PackageReference Include="Syncfusion.Xamarin.SfRangeSlider" Version="18.3.0.51" />
+    <PackageReference Include="Syncfusion.Xamarin.Pdf" Version="18.3.0.51" />
+    <PackageReference Include="ImageResizer" Version="4.2.8" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Views\DashboardPatient\SummaryGraphAsync.xaml.cs" />
+    <Compile Remove="Views\DashboardPatient\GraphTest.xaml.cs" />
+    <Compile Remove="Views\DashboardPatient\GraphCrousel.xaml.cs" />
+    <Compile Remove="Views\DashboardPatient\SummaryPage.xaml.cs" />
+    <Compile Remove="Classes\ImageResizer.cs" />
+    <Compile Remove="Views\masterMenu\masterMenuPage.xaml.cs" />
+    <Compile Remove="Model\Clinic.cs" />
+    <Compile Remove="Model\VitalForm.cs" />
+    <Compile Remove="Model\Model.cs" />
+    <Compile Remove="Views\DashboardPatient\AnnotationTest.cs" />
+    <Compile Remove="EmbeddedImageResourceExtension.cs" />
+    <Compile Remove="EmbeddedImages.cs" />
+    <Compile Remove="Classes\AgeRelatedVitalData.cs" />
+    <Compile Remove="Classes\ChartExt.cs" />
+    <Compile Remove="Interfaces\IChartToPDFDependencyService.cs" />
+    <Compile Remove="Interfaces\ISave.cs" />
+    <Compile Remove="Views\DashboardPatient\vitalForm.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Views\DashboardPatient\SummaryGraphAsync.xaml" />
+    <EmbeddedResource Remove="Views\DashboardPatient\GraphTest.xaml" />
+    <EmbeddedResource Remove="Views\DashboardPatient\GraphCrousel.xaml" />
+    <EmbeddedResource Remove="Views\DashboardPatient\SummaryPage.xaml" />
+    <EmbeddedResource Remove="Views\masterMenu\masterMenuPage.xaml" />
+    <EmbeddedResource Remove="Views\DashboardPatient\vitalForm.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\TermsConditions.xaml.cs">
+      <DependentUpon>TermsConditions.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Images\logo.png" />
+    <None Remove="Images\flower.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\logo.png" />
+    <EmbeddedResource Include="Images\flower.jpg" />
+  </ItemGroup>
+</Project>

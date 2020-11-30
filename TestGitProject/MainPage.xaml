@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TestGitProject.Views"
+             x:Class="TestGitProject.MainPage">
+
+    <NavigationPage Title="Login" >
+        <x:Arguments>
+            <local:landingPage  Title="MyTestApp"/>
+        </x:Arguments>
+    </NavigationPage>
+        
+    <NavigationPage Title="About Text" >
+        <x:Arguments>
+            <local:aboutPageInfo Title="Information about XYZ"/>
+        </x:Arguments>
+    </NavigationPage>       
+
+</TabbedPage>
